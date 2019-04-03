@@ -25,10 +25,10 @@ class StorePackageRequest extends FormRequest
     {
         return [
             //
-            'name'=>"required|Alpha|max:16",
-            'price'=>'required|numeric|min:1',
-            'number_of_sessions'=>'required|numeric|min:1',
-            'gym_id'=>"required|exists:gyms,id",
+            'name' => "required|max:16",
+            'price' => 'required|numeric|min:1',
+            'number_of_sessions' => 'required|numeric|min:1',
+            'gym_id' => "required|exists:gyms,id",
         ];
     }
 
@@ -37,7 +37,7 @@ class StorePackageRequest extends FormRequest
         return [
             'name.required' => 'Please enter Package name!',
             'name.max' => 'The name must be less than 16 letters!',
-        
+
         ];
     }
 }

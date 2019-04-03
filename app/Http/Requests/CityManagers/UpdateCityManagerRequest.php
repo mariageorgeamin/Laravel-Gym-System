@@ -24,7 +24,7 @@ class UpdateCityManagerRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => "Alpha|min:6|max:25",
+            'name' => "regex:/^[\pL\s\-]+$/u|min:6|max:25",
             'email' => 'email',
             'password' => "min:6",
             // 'national_id' => 'numerm,ic|min:5|unique:city_managers',

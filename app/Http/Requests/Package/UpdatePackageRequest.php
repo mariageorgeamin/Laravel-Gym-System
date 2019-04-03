@@ -25,10 +25,10 @@ class UpdatePackageRequest extends FormRequest
     {
         return [
             //
-            'name'=>"required|Alpha|max:16|unique:gym_packages,name,".$this->package->id,
-            'number_of_sessions'=>'required|numeric|min:1',
-            'price'=>'required|numeric|min:1',
-            'gym_id'=>"required|exists:gyms,id",
+            'name' => "required|max:16|unique:gym_packages,name," . $this->package->id,
+            'number_of_sessions' => 'required|numeric|min:1',
+            'price' => 'required|numeric|min:1',
+            'gym_id' => "required|exists:gyms,id",
         ];
     }
 }

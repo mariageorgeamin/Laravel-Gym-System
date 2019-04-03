@@ -24,14 +24,15 @@ class UpdateCityRequest extends FormRequest
     public function rules()
     {
         return [
-           
-                'name' => 'required|min:3',
-                // 'city_manager_id' => 'required|exists:city_managers,id',
-                'country_id' => 'required|exists:countries,id'
-          
+
+            'name' => 'required|alpha|min:3',
+            // 'city_manager_id' => 'required|exists:city_managers,id',
+            'country_id' => 'required|exists:countries,id',
+
         ];
     }
-    public function messages(){
+    public function messages()
+    {
         return [
             'name.required' => 'city name is required',
             'name.min' => 'name must be more than 3 characters',

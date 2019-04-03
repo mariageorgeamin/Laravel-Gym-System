@@ -24,8 +24,8 @@ class UpdateCoachRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=> 'min:3|required',
-            'gym_id'=> 'required'
+            'name' => 'min:3|regex:/^[\pL\s\-]+$/u|required',
+            'gym_id' => 'required',
         ];
     }
 

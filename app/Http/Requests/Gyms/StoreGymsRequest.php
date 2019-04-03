@@ -25,9 +25,9 @@ class StoreGymsRequest extends FormRequest
     {
         //'name', 'created_at', 'img', 'creator_name', 'city_id'
         return [
-            'name'=>"required|Alpha|max:25|min:6",
-            'city_id'=>"exists:cities,id",
-            'img' => 'required | mimes:jpeg,jpg,png | max:2000'
+            'name' => "required|max:25|min:6",
+            'city_id' => "exists:cities,id",
+            'img' => 'required | mimes:jpeg,jpg,png | max:2000',
         ];
     }
 
@@ -40,7 +40,7 @@ class StoreGymsRequest extends FormRequest
             'city_id.exists' => 'City Must Be Exist !',
             'img.required' => 'Image is required',
             'img.mimes' => 'Image Format must be (jpeg,jpg,png)',
-            'img.max' => 'Image Max Size is 2000kb'
+            'img.max' => 'Image Max Size is 2000kb',
 
         ];
     }

@@ -25,10 +25,10 @@ class StoreGymManagerRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>"required|Alpha|max:25|min:6",
+            'name' => "required|regex:/^[\pL\s\-]+$/u|max:25|min:6",
             'email' => "required|email||unique:users",
             'password' => 'required|max:25|min:6',
-            'gym_id'=>"exists:gyms,id",
+            'gym_id' => "exists:gyms,id",
             'img' => 'required | mimes:jpeg,jpg,png | max:2000',
             'national_id' => 'required|max:25|min:6|unique:gym_managers',
 
