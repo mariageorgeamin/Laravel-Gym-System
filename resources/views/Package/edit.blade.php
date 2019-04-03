@@ -39,7 +39,7 @@
     <br>
     @endif
         <div class="form-group">
-            <label for="package_price">Price $ </label>
+            <label for="package_price">Price (Cent) </label>
             <input type="number" name="price" value="{{$package->price}}" id="package_price"></input>
         </div>
         @if ($errors->has('price'))
