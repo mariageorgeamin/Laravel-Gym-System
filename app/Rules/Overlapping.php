@@ -47,7 +47,7 @@ class Overlapping implements Rule
             $sessionFilter = $sessions->filter(function ($sessions) use ($gym_id) {
                 return $sessions->gym_id == $gym_id;
             });
-        // dd($gym_id);
+            // dd($gym_id);
         } else {
             $gym_id = Auth::User()->role->gym_id;
             $sessions = Session::all()->where('session_date', '=', $this->date);
@@ -68,6 +68,9 @@ class Overlapping implements Rule
                     return false;
                 }
                 if ($this->finishes_at > $session->starts_at && $this->finishes_at < $session->finishes_at) {
+                    return false;
+                }
+                if ($this->starts_at < $session->starts_at && $this->finishes_at > $session->finishes_at) {
                     return false;
                 }
             }
